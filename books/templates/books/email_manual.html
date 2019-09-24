@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>email manual</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    {% load bootstrap3 %}
+    {{ form.non_field_errors }}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="fieldWrapper">
+            {{ form.subject.errors }}
+            <label for="{{ form.subject.id_for_label }}">Email subject:</label>
+            {{ form.subject }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.message.errors }}
+            {{ form.message.label_tag }}
+            {{ form.message }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.sender.errors }}
+            {{ form.sender.label_tag }}
+            {{ form.sender }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.cc_myself.errors }}
+            <label for="{{ form.cc_myself.id_for_label }}">CC yourself?</label>
+            {{ form.cc_myself }}
+        </div>
+        {% buttons %}
+            <button type="submit" class="tn btn-primary">
+                {% bootstrap_icon start %}Submit
+            </button>
+        {% endbuttons %}
+    </form>
+</body>
+</html>

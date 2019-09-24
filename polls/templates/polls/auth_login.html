@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    {% load bootstrap3 %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="user">用户名</label>
+        <input type="text" id="user" name="username" />
+        <label for="pass">密码</label>
+        <input type="text" id="pass" name="password" />
+        <br/>
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>

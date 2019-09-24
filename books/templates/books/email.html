@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>email</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    {% load bootstrap3 %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% bootstrap_form form layout="horizontal" %}
+        {% buttons %}
+            <button type="submit" class="tn btn-primary">
+                {% bootstrap_icon start %}Submit
+            </button>
+        {% endbuttons %}
+    </form>
+</body>
+</html>

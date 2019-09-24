@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除确认</title>
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <strong>
+            确认信息： <br />
+            <div style="padding:25px;">{{ publisher.name }}</div>
+        </strong>
+        <br />
+        <input type="submit" value="确定删除吗？" />
+    </form>
+</body>
+</html>

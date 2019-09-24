@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发送邮件</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <h1>
+        <strong>请填写邮件相关信息</strong>
+    </h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="subject">Subject: </label>
+        <input name="subject" type="text" />
+        <br />
+        <label for="message">Message: </label>
+        <input name="message" type="text" />
+        <br />
+        <label for="from_email">From_email: </label>
+        <input name="from_email" type="text" />
+        <br />
+        <input type="submit" value="提交" />
+    </form>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>publisher_list</title>
+</head>
+<body>
+    <h1>Publisher list: </h1>
+    {% block publisher_list %}
+        {% for publisher in object_list %}
+            <li>
+                <a href="{% url 'books:publisher_detail' publisher.id %}">
+                    {{ publisher.name }}
+                </a>
+            </li>
+        {% endfor %}
+    {% endblock %}
+</body>
+</html>

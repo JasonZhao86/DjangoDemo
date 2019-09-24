@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>最近的五本书</title>
+</head>
+<body>
+    {% load static %}
+    {% load mytags %}
+    <img src="{% static 'wechat.jpg'%}" />
+    <ul>
+        {% for question in query_set %}
+            <li>
+                <a href="{% url 'polls:detail' question.id %}">
+                    {{ question.question_text }}
+                </a>
+                --{{ question|question_choice_count }}
+            </li>
+            -- {{ question|question_choice_count_add:2 }}
+        {% endfor %}
+    </ul>
+</body>
+</html>
